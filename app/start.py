@@ -20,7 +20,7 @@ if machine.wake_reason() == machine.PIN_WAKE:
     c.publish(mqttTopic, alarmMessage)    
     c.disconnect()
     print("MQTT pushed")
-    time.sleep(10) 
+    time.sleep(1) 
     print("Entering lightsleep")
     esp32.wake_on_ext0(pin, esp32.WAKEUP_ALL_LOW)
     machine.lightsleep()
@@ -35,7 +35,7 @@ if machine.wake_reason() == machine.PIN_WAKE:
     # c.connect()
     c.publish(mqttTopic, okMessage)
     c.disconnect()
-    time.sleep(10)
+    time.sleep(1)
 
 esp32.wake_on_ext0(pin, esp32.WAKEUP_ANY_HIGH)
 machine.deepsleep()
